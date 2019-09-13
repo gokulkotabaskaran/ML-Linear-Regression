@@ -6,6 +6,7 @@ from sklearn import linear_model
 df=pd.read_csv("homeprices.csv")
 df
 plt.scatter(df.area,df.price,color="red",marker="+")
+plt.plot(df.area,reg.predict([[df.area]]),color="blue")
 
 reg=linear_model.LinearRegression()
 reg.fit(df[["area"]],df.price)
